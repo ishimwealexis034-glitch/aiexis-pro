@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESP32 IoT Dashboard</title>
+    <!-- Link external CSS stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Include MQTT.js library from CDN -->
+    <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <h1>ESP32 Live Dashboard</h1>
+        <div id="connection-status">Status: Connecting...</div>
+
+        <div class="card-grid">
+            <div class="card">
+                <h3>Temperature</h3>
+                <span id="temp-val">--</span>&deg;C
+            </div>
+            <div class="card">
+                <h3>Humidity</h3>
+                <span id="hum-val">--</span>%
+            </div>
+        </div>
+
+        <div class="led-status">
+            <h3>LED States</h3>
+            <p>Green LED (&gt;35°C): <span id="green-badge" class="badge bg-low">LOW</span></p>
+            <p>Red LED (&lt;50%): <span id="red-badge" class="badge bg-low">LOW</span></p>
+        </div>
+    </div>
+
+    <!-- Link external JavaScript file -->
+    <script src="app.js"></script>
+</body>
+</html>
